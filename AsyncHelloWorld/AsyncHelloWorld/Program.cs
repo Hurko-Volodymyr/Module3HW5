@@ -1,10 +1,16 @@
 ﻿namespace AsyncHelloWorld
 {
-    internal static class Program
+    internal class Program
     {
-        private static void Main(string[] args)
+        protected Program()
         {
-            // Method intentionally left empty.
+        }
+
+        protected static async Task Main(string[] args)
+        {
+            var fileService = new FileService();
+            var helloWorld = await fileService.StringSummonerAsync();
+            Console.WriteLine(helloWorld);
         }
     }
 }
